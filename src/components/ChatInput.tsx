@@ -82,20 +82,20 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled }) => {
     const canSend = (input.trim().length > 0 || attachments.length > 0) && !disabled && !isProcessing;
 
     return (
-        <div style={{
+        <div className="chat-input-outer" style={{
             flexShrink: 0,
             width: '100%',
             padding: 'var(--space-4)',
             backgroundColor: 'var(--bg-primary)',
             borderTop: '1px solid var(--border-secondary)'
         }}>
-            <div style={{
+            <div className="chat-input-max-width" style={{
                 maxWidth: '768px',
                 margin: '0 auto',
                 position: 'relative'
             }}>
                 {/* Input Container */}
-                <div style={{
+                <div className="chat-input-box" style={{
                     position: 'relative',
                     border: `2px solid ${isFocused ? 'var(--accent-primary)' : 'var(--border-primary)'}`,
                     borderRadius: 'var(--radius-lg)',
@@ -279,7 +279,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled }) => {
                 </div>
 
                 {/* Helper Text */}
-                <div style={{
+                <div className="keyboard-hints" style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',

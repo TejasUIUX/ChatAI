@@ -420,6 +420,23 @@ html {
 }
 
 /* Responsive Styles */
+
+/* Sidebar transition — always present for smooth animation */
+aside {
+  transition: left var(--transition-slow), transform var(--transition-slow) !important;
+}
+
+/* Helper Class for Mobile Header (hidden on desktop) */
+.mobile-header {
+  display: none;
+}
+
+/* Keyboard hints — visible on desktop */
+.keyboard-hints {
+  display: flex;
+}
+
+/* ===== Tablet & below (768px) ===== */
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column !important;
@@ -428,9 +445,10 @@ html {
   /* Sidebar responsiveness */
   aside {
     position: fixed !important;
-    left: -260px;
+    left: -280px;
     top: 0;
     bottom: 0;
+    width: 260px !important;
     z-index: 1000;
     box-shadow: var(--shadow-xl);
     background-color: var(--bg-secondary);
@@ -451,6 +469,7 @@ html {
     z-index: 999;
     display: block;
     backdrop-filter: blur(2px);
+    animation: fadeIn var(--transition-fast) ease-out;
   }
 
   /* Main content adjustments */
@@ -475,10 +494,26 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: var(--radius-md);
+  }
+
+  .mobile-menu-btn:active {
+    background-color: var(--bg-tertiary);
   }
 
   .mobile-close-btn {
     display: flex !important;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+  }
+
+  .mobile-close-btn:active {
+    background-color: var(--bg-tertiary);
   }
 
   .mobile-title {
@@ -488,30 +523,139 @@ html {
   }
 
   /* Chat Area adjustments */
-  .chat-area-container {
-    padding: var(--space-2) !important;
+  .message-row {
+    padding: var(--space-4) var(--space-3) !important;
   }
 
-  .message-bubble {
-    max-width: 90% !important;
+  .message-content-wrapper {
+    max-width: 100% !important;
+  }
+
+  .message-avatar {
+    width: 30px !important;
+    height: 30px !important;
   }
 
   /* Chat Input adjustments */
-  .chat-input-wrapper {
-    margin: var(--space-2) !important;
+  .chat-input-outer {
     padding: var(--space-2) var(--space-3) !important;
+  }
+
+  .chat-input-max-width {
+    max-width: 100% !important;
+  }
+
+  .chat-input-box {
+    padding: var(--space-2) !important;
+  }
+
+  /* Hide keyboard hints on mobile */
+  .keyboard-hints {
+    display: none !important;
   }
 
   /* Modal responsiveness */
   .modal-content {
     width: 95% !important;
+    max-width: 95% !important;
     margin: var(--space-2) auto !important;
     max-height: 90vh !important;
     overflow-y: auto;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .modal-content .modal-body {
+    padding: var(--space-4) !important;
+  }
+
+  /* Markdown code blocks — horizontal scroll on mobile */
+  .markdown-content code {
+    font-size: 0.8em !important;
+  }
+
+  .markdown-content pre {
+    max-width: calc(100vw - 80px);
+  }
+
+  .markdown-content table {
+    font-size: var(--text-xs);
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .markdown-content table th,
+  .markdown-content table td {
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
   }
 }
 
-/* Helper Class for Mobile Header (hidden on desktop) */
-.mobile-header {
-  display: none;
+/* ===== Small phones (480px) ===== */
+@media (max-width: 480px) {
+  .mobile-header {
+    padding: var(--space-2) var(--space-3) !important;
+    gap: var(--space-3);
+  }
+
+  .mobile-title {
+    font-size: var(--text-sm);
+  }
+
+  /* Even tighter message spacing */
+  .message-row {
+    padding: var(--space-3) var(--space-2) !important;
+  }
+
+  .message-content-wrapper {
+    gap: var(--space-2) !important;
+  }
+
+  .message-avatar {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .message-avatar svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Compact input */
+  .chat-input-outer {
+    padding: var(--space-1) var(--space-2) !important;
+  }
+
+  .chat-input-box {
+    padding: var(--space-2) !important;
+    border-width: 1px !important;
+  }
+
+  .chat-input-box textarea {
+    font-size: var(--text-sm) !important;
+  }
+
+  /* Modal fully flush on small screens */
+  .modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    max-height: 100vh !important;
+    height: 100vh !important;
+  }
+
+  /* Empty state smaller */
+  .empty-state-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .empty-state-title {
+    font-size: var(--text-lg) !important;
+  }
+
+  .empty-state-subtitle {
+    font-size: var(--text-xs) !important;
+  }
 }

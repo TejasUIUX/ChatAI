@@ -51,7 +51,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
             zIndex: 1000,
             backdropFilter: 'blur(4px)'
         }}>
-            <div style={{
+            <div className="modal-content" style={{
                 backgroundColor: 'var(--bg-primary)',
                 borderRadius: 'var(--radius-xl)',
                 width: '100%',

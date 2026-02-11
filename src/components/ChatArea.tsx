@@ -74,9 +74,10 @@ const ChatArea: React.FC<ChatAreaProps> = ({ messages, loading }) => {
                     height: '80%',
                     color: 'var(--text-secondary)',
                     gap: 'var(--space-4)',
-                    animation: 'fadeIn var(--transition-slow) ease-out'
+                    animation: 'fadeIn var(--transition-slow) ease-out',
+                    padding: '0 var(--space-4)'
                 }}>
-                    <div style={{
+                    <div className="empty-state-icon" style={{
                         width: '64px',
                         height: '64px',
                         borderRadius: 'var(--radius-xl)',
@@ -88,15 +89,16 @@ const ChatArea: React.FC<ChatAreaProps> = ({ messages, loading }) => {
                     }}>
                         <Bot size={32} color="var(--accent-primary)" strokeWidth={2} />
                     </div>
-                    <h2 style={{
+                    <h2 className="empty-state-title" style={{
                         fontSize: 'var(--text-2xl)',
                         fontWeight: 700,
                         color: 'var(--text-primary)',
-                        marginBottom: 'var(--space-2)'
+                        marginBottom: 'var(--space-2)',
+                        textAlign: 'center'
                     }}>
                         How can I help you today?
                     </h2>
-                    <p style={{
+                    <p className="empty-state-subtitle" style={{
                         fontSize: 'var(--text-sm)',
                         color: 'var(--text-muted)',
                         maxWidth: '400px',
@@ -117,6 +119,7 @@ const ChatArea: React.FC<ChatAreaProps> = ({ messages, loading }) => {
                         return (
                             <div
                                 key={index}
+                                className="message-row"
                                 style={{
                                     width: '100%',
                                     padding: 'var(--space-6) var(--space-4)',
@@ -127,14 +130,14 @@ const ChatArea: React.FC<ChatAreaProps> = ({ messages, loading }) => {
                                     animation: `slideInFromBottom ${200 + index * 50}ms ease-out`
                                 }}
                             >
-                                <div style={{
+                                <div className="message-content-wrapper" style={{
                                     width: '100%',
                                     maxWidth: '768px',
                                     display: 'flex',
                                     gap: 'var(--space-4)'
                                 }}>
                                     {/* Avatar */}
-                                    <div style={{
+                                    <div className="message-avatar" style={{
                                         width: '36px',
                                         height: '36px',
                                         borderRadius: 'var(--radius-md)',
