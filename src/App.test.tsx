@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import App from './App';
@@ -55,7 +55,7 @@ describe('Summerizer App Integration Tests', () => {
     it('can send a message and receive a response', async () => {
         // Setup mock response
         const mockStreamChat = vi.mocked(api.streamChat);
-        mockStreamChat.mockImplementation(async (messages, config, onChunk) => {
+        mockStreamChat.mockImplementation(async (_messages, _config, onChunk) => {
             onChunk('Hello');
             onChunk(' there!');
         });
