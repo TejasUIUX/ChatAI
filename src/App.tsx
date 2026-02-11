@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Menu } from 'lucide-react';
 import './index.css';
 import type { ChatSession, Message, ApiConfig, Attachment, Project } from './types';
 import { streamChat } from './services/api';
@@ -24,6 +25,7 @@ function App() {
         model: DEFAULT_MODEL
     });
     const [systemPrompt, setSystemPrompt] = useState('');
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     // Initial Load
     useEffect(() => {
@@ -261,17 +263,36 @@ function App() {
     const currentMessages = getCurrentSession()?.messages || [];
 
     return (
-        <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+        <div className="app-container" style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+            {/* Mobile Overlay */}
+            {isSidebarOpen && (
+                <div
+                    className="sidebar-overlay"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
             <Sidebar
+                className={isSidebarOpen ? 'sidebar-open' : ''}
                 sessions={sessions}
                 currentSessionId={currentSessionId}
                 projects={projects}
-                onSelectSession={handleSelectSession}
-                onNewChat={handleNewChat}
+                onSelectSession={(id) => {
+                    handleSelectSession(id);
+                    setIsSidebarOpen(false); // Close sidebar on mobile after selection
+                }}
+                onNewChat={() => {
+                    handleNewChat();
+                    setIsSidebarOpen(false);
+                }}
                 onDeleteSession={handleDeleteSession}
-                onOpenSettings={() => setIsSettingsOpen(true)}
+                onOpenSettings={() => {
+                    setIsSettingsOpen(true);
+                    setIsSidebarOpen(false);
+                }}
                 onCreateProject={handleCreateProject}
                 onDeleteProject={handleDeleteProject}
+                onClose={() => setIsSidebarOpen(false)}
             />
 
             <main style={{
@@ -279,8 +300,21 @@ function App() {
                 backgroundColor: 'var(--bg-primary)',
                 display: 'flex',
                 flexDirection: 'column',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                position: 'relative'
             }}>
+                {/* Mobile Header */}
+                <header className="mobile-header">
+                    <button
+                        className="mobile-menu-btn"
+                        onClick={() => setIsSidebarOpen(true)}
+                        aria-label="Open menu"
+                    >
+                        <Menu size={24} />
+                    </button>
+                    <div className="mobile-title">ChatAI</div>
+                </header>
+
                 <ErrorBoundary>
                     <ChatArea
                         messages={currentMessages}

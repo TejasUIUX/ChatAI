@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageSquare, Plus, Trash2, Settings, Folder, ChevronDown, ChevronRight } from 'lucide-react';
+import { MessageSquare, Plus, Trash2, Settings, Folder, ChevronDown, ChevronRight, X } from 'lucide-react';
 import type { ChatSession, Project } from '../types';
 
 interface SidebarProps {
@@ -12,6 +12,8 @@ interface SidebarProps {
     onOpenSettings: () => void;
     onCreateProject: (name: string) => void;
     onDeleteProject: (projectId: string) => void;
+    className?: string;
+    onClose?: () => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -23,7 +25,9 @@ const Sidebar: React.FC<SidebarProps> = ({
     onDeleteSession,
     onOpenSettings,
     onCreateProject,
-    onDeleteProject
+    onDeleteProject,
+    className,
+    onClose
 }) => {
     const [hoveredSessionId, setHoveredSessionId] = useState<string | null>(null);
     const [isCreatingProject, setIsCreatingProject] = useState(false);
@@ -57,25 +61,31 @@ const Sidebar: React.FC<SidebarProps> = ({
     });
 
     return (
-        <aside style={{
-            width: '260px',
-            backgroundColor: 'var(--bg-secondary)',
-            borderRight: '1px solid var(--border-primary)',
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100%',
-            transition: 'width var(--transition-base)',
-            flexShrink: 0
-        }}>
+        <aside
+            className={className}
+            style={{
+                width: '260px',
+                backgroundColor: 'var(--bg-secondary)',
+                borderRight: '1px solid var(--border-primary)',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                transition: 'all var(--transition-base)',
+                flexShrink: 0
+            }}
+        >
             {/* Header */}
             <div style={{
                 padding: 'var(--space-4)',
-                borderBottom: '1px solid var(--border-primary)'
+                borderBottom: '1px solid var(--border-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 'var(--space-2)'
             }}>
                 <button
                     onClick={onNewChat}
                     style={{
-                        width: '100%',
+                        flex: 1,
                         padding: 'var(--space-3)',
                         backgroundColor: 'var(--accent-primary)',
                         color: 'white',
@@ -95,6 +105,19 @@ const Sidebar: React.FC<SidebarProps> = ({
                 >
                     <Plus size={18} />
                     New Chat
+                </button>
+
+                {/* Mobile Close Button */}
+                <button
+                    onClick={onClose}
+                    className="mobile-close-btn"
+                    style={{
+                        padding: 'var(--space-2)',
+                        color: 'var(--text-secondary)',
+                        display: 'none' // Hidden by default, shown in media query
+                    }}
+                >
+                    <X size={20} />
                 </button>
             </div>
 

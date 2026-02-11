@@ -418,3 +418,100 @@ html {
   font-style: italic;
   color: var(--text-secondary);
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column !important;
+  }
+
+  /* Sidebar responsiveness */
+  aside {
+    position: fixed !important;
+    left: -260px;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-xl);
+    background-color: var(--bg-secondary);
+  }
+
+  aside.sidebar-open {
+    left: 0 !important;
+  }
+
+  /* Overlay for when sidebar is open */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: block;
+    backdrop-filter: blur(2px);
+  }
+
+  /* Main content adjustments */
+  main {
+    width: 100% !important;
+  }
+
+  /* Mobile Header */
+  .mobile-header {
+    display: flex !important;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-primary);
+    gap: var(--space-4);
+    z-index: 50;
+  }
+
+  .mobile-menu-btn {
+    color: var(--text-primary);
+    padding: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-close-btn {
+    display: flex !important;
+  }
+
+  .mobile-title {
+    font-weight: 700;
+    font-size: var(--text-base);
+    color: var(--accent-primary);
+  }
+
+  /* Chat Area adjustments */
+  .chat-area-container {
+    padding: var(--space-2) !important;
+  }
+
+  .message-bubble {
+    max-width: 90% !important;
+  }
+
+  /* Chat Input adjustments */
+  .chat-input-wrapper {
+    margin: var(--space-2) !important;
+    padding: var(--space-2) var(--space-3) !important;
+  }
+
+  /* Modal responsiveness */
+  .modal-content {
+    width: 95% !important;
+    margin: var(--space-2) auto !important;
+    max-height: 90vh !important;
+    overflow-y: auto;
+  }
+}
+
+/* Helper Class for Mobile Header (hidden on desktop) */
+.mobile-header {
+  display: none;
+}
