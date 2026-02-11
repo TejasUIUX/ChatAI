@@ -24,8 +24,8 @@ export const summarizeText = async (text: string, config: ApiConfig): Promise<Su
             headers: {
                 "Authorization": `Bearer ${apiKey}`,
                 "Content-Type": "application/json",
-                "HTTP-Referer": "http://localhost:5173", // Optional: Client URL
-                "X-Title": "Explain Like I'm Busy" // Optional: App name
+                "HTTP-Referer": window.location.origin,
+                "X-Title": "Summerizer"
             },
             body: JSON.stringify({
                 model: config.model || "x-ai/grok-4.1-fast",
@@ -91,8 +91,8 @@ export const generateReply = async (summary: string, intent: string, config: Api
             headers: {
                 "Authorization": `Bearer ${apiKey}`,
                 "Content-Type": "application/json",
-                "HTTP-Referer": "http://localhost:5173",
-                "X-Title": "Explain Like I'm Busy"
+                "HTTP-Referer": window.location.origin,
+                "X-Title": "Summerizer"
             },
             body: JSON.stringify({
                 model: config.model || "x-ai/grok-4.1-fast",
@@ -134,8 +134,8 @@ export const askQuestion = async (context: string, question: string, config: Api
             headers: {
                 "Authorization": `Bearer ${apiKey}`,
                 "Content-Type": "application/json",
-                "HTTP-Referer": "http://localhost:5173",
-                "X-Title": "Explain Like I'm Busy"
+                "HTTP-Referer": window.location.origin,
+                "X-Title": "Summerizer"
             },
             body: JSON.stringify({
                 model: config.model || "x-ai/grok-4.1-fast",
@@ -306,7 +306,7 @@ export const sendChat = async (messages: Message[], config: ApiConfig): Promise<
             headers: {
                 "Authorization": `Bearer ${apiKey}`,
                 "Content-Type": "application/json",
-                "HTTP-Referer": "http://localhost:5173",
+                "HTTP-Referer": window.location.origin,
                 "X-Title": "Summerizer"
             },
             body: JSON.stringify({
