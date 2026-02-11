@@ -263,7 +263,7 @@ function App() {
     const currentMessages = getCurrentSession()?.messages || [];
 
     return (
-        <div className="app-container" style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+        <div className="app-container" style={{ display: 'flex', height: '100dvh', minHeight: '-webkit-fill-available', overflow: 'hidden' }}>
             {/* Mobile Overlay */}
             {isSidebarOpen && (
                 <div

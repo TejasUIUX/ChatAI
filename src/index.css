@@ -75,6 +75,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+  /* Fix mobile viewport: dvh accounts for browser chrome */
+  height: 100vh;
+  height: 100dvh;
 }
 
 /* Scrollbar Styling */
@@ -247,6 +250,9 @@ textarea {
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;
+  /* Fix mobile viewport: dvh accounts for browser chrome */
+  height: 100vh;
+  height: 100dvh;
 }
 
 @keyframes spin {
