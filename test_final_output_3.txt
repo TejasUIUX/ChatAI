@@ -1,0 +1,35 @@
+
+ RUN  v4.0.18 D:/AntiGravity code area/Summerizer app
+
+ ❯ src/App.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/App.test.tsx [ src/App.test.tsx ]
+Error: Transform failed with 1 error:
+D:/AntiGravity code area/Summerizer app/src/App.test.tsx:127:8: ERROR: "await" can only be used inside an "async" function
+  Plugin: vite:esbuild
+  File: D:/AntiGravity code area/Summerizer app/src/App.test.tsx:127:8
+  
+  "await" can only be used inside an "async" function
+  125 |  
+  126 |          // Verify it's closed
+  127 |          await waitFor(() => {
+      |          ^
+  128 |              expect(screen.queryByText('AI Model')).not.toBeInTheDocument();
+  129 |          });
+  
+ ❯ failureErrorWithLog node_modules/esbuild/lib/main.js:1467:15
+ ❯ node_modules/esbuild/lib/main.js:736:50
+ ❯ responseCallbacks.<computed> node_modules/esbuild/lib/main.js:603:9
+ ❯ handleIncomingPacket node_modules/esbuild/lib/main.js:658:12
+ ❯ Socket.readFromStdout node_modules/esbuild/lib/main.js:581:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  13:44:45
+   Duration  1.65s (transform 37ms, setup 179ms, import 0ms, tests 0ms, environment 1.21s)
+

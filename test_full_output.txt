@@ -1,0 +1,528 @@
+
+ RUN  v4.0.18 D:/AntiGravity code area/Summerizer app
+
+stderr | src/App.test.tsx > Summerizer App Integration Tests > can send a message and receive a response
+An update to App inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to App inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ ❯ src/App.test.tsx (5 tests | 3 failed) 419ms
+     × renders the initial UI correctly 133ms
+     ✓ can create a new chat session 36ms
+     × can send a message and receive a response 123ms
+     ✓ can create a new folder (project) 56ms
+     × persists settings 69ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/App.test.tsx > Summerizer App Integration Tests > renders the initial UI correctly
+TestingLibraryElementError: Found multiple elements with the text: New Chat
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33mstyle[39m=[32m"width: 100%; padding: var(--space-3); background-color: var(--accent-primary); color: white; border: medium; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: var(--space-2); font-weight: 500; font-size: var(--text-sm); transition: background-color var(--transition-base);"[39m
+[36m>[39m
+  [36m<svg[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"lucide lucide-plus"[39m
+    [33mfill[39m=[32m"none"[39m
+    [33mheight[39m=[32m"18"[39m
+    [33mstroke[39m=[32m"currentColor"[39m
+    [33mstroke-linecap[39m=[32m"round"[39m
+    [33mstroke-linejoin[39m=[32m"round"[39m
+    [33mstroke-width[39m=[32m"2"[39m
+    [33mviewBox[39m=[32m"0 0 24 24"[39m
+    [33mwidth[39m=[32m"18"[39m
+    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+  [36m>[39m
+    [36m<path[39m
+      [33md[39m=[32m"M5 12h14"[39m
+    [36m/>[39m
+    [36m<path[39m
+      [33md[39m=[32m"M12 5v14"[39m
+    [36m/>[39m
+  [36m</svg>[39m
+  [0mNew Chat[0m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<span[39m
+  [33mstyle[39m=[32m"white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: var(--text-sm); flex: 1 1 0%;"[39m
+[36m>[39m
+  [0mNew Chat[0m
+[36m</span>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m"display: flex; height: 100vh; overflow: hidden;"[39m
+    [36m>[39m
+      [36m<aside[39m
+        [33mstyle[39m=[32m"width: 260px; background-color: var(--bg-secondary); border-right: 1px solid var(--border-primary); display: flex; flex-direction: column; height: 100%; transition: width var(--transition-base); flex-shrink: 0;"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: var(--space-4); border-bottom: 1px solid var(--border-primary);"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mstyle[39m=[32m"width: 100%; padding: var(--space-3); background-color: var(--accent-primary); color: white; border: medium; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: var(--space-2); font-weight: 500; font-size: var(--text-sm); transition: background-color var(--transition-base);"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-plus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"18"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 5v14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mNew Chat[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"flex: 1 1 0%; overflow-y: auto; padding: var(--space-3);"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"margin-bottom: var(--space-4);"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"padding: var(--space-3); margin: var(--space-1) 0; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: var(--space-3); background-color: var(--bg-tertiary); color: var(--text-primary); transition: background-color var(--transition-base); position: relative;"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-message-square"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span[39m
+                [33mstyle[39m=[32m"white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: var(--text-sm); flex: 1 1 0%;"[39m
+              [36m>[39m
+                [0mNew Chat[0m
+              [36m</span>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"delete-btn"[39m
+                [33mstyle[39m=[32m"background: transparent; border: medium; cursor: pointer; padding: var(--space-1); color: var(--text-muted); opacity: 0.7; display: flex; align-items: center;"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-trash2 lucide-trash-2"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"14"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"14"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M10 11v6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14 11v6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M3 6h18"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: var(--space-4); border-top: 1px solid var(--border-primary); display: flex; flex-direction: column; gap: var(--space-2);"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mstyle[39m=[32m"display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2); border-radius: var(--radius-md); border: medium; background-color: transparent; color: var(--text-secondary); cursor: pointer; transition: all var(--transition-base); font-size: var(--text-sm); text-align: left;"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-folder"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"18"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 20a2 2 0 0 0 ...
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getElementError node_modules/@testing-library/dom/dist/query-helpers.js:20:35
+ ❯ getMultipleElementsFoundError node_modules/@testing-library/dom/dist/query-helpers.js:23:10
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/App.test.tsx:38:23
+     36|     it('renders the initial UI correctly', () => {
+     37|         render(<App />);
+     38|         expect(screen.getByText('New Chat')).toBeInTheDocument();
+       |                       ^
+     39|         expect(screen.getByPlaceholderText('Send a message...')).toBeI…
+     40|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/App.test.tsx > Summerizer App Integration Tests > can send a message and receive a response
+TestingLibraryElementError: Found multiple elements with the text: Hi AI
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<span[39m
+  [33mstyle[39m=[32m"white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: var(--text-sm); flex: 1 1 0%;"[39m
+[36m>[39m
+  [0mHi AI[0m
+[36m</span>[39m
+
+Ignored nodes: comments, script, style
+[36m<p>[39m
+  [0mHi AI[0m
+[36m</p>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m"display: flex; height: 100vh; overflow: hidden;"[39m
+    [36m>[39m
+      [36m<aside[39m
+        [33mstyle[39m=[32m"width: 260px; background-color: var(--bg-secondary); border-right: 1px solid var(--border-primary); display: flex; flex-direction: column; height: 100%; transition: width var(--transition-base); flex-shrink: 0;"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: var(--space-4); border-bottom: 1px solid var(--border-primary);"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mstyle[39m=[32m"width: 100%; padding: var(--space-3); background-color: var(--accent-primary); color: white; border: medium; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: var(--space-2); font-weight: 500; font-size: var(--text-sm); transition: background-color var(--transition-base);"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-plus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"18"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 5v14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mNew Chat[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"flex: 1 1 0%; overflow-y: auto; padding: var(--space-3);"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"margin-bottom: var(--space-4);"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"padding: var(--space-3); margin: var(--space-1) 0; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: var(--space-3); background-color: var(--bg-tertiary); color: var(--text-primary); transition: background-color var(--transition-base); position: relative;"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-message-square"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span[39m
+                [33mstyle[39m=[32m"white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: var(--text-sm); flex: 1 1 0%;"[39m
+              [36m>[39m
+                [0mHi AI[0m
+              [36m</span>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"delete-btn"[39m
+                [33mstyle[39m=[32m"background: transparent; border: medium; cursor: pointer; padding: var(--space-1); color: var(--text-muted); opacity: 0.7; display: flex; align-items: center;"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-trash2 lucide-trash-2"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"14"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"14"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M10 11v6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14 11v6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M3 6h18"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: var(--space-4); border-top: 1px solid var(--border-primary); display: flex; flex-direction: column; gap: var(--space-2);"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mstyle[39m=[32m"display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2); border-radius: var(--radius-md); border: medium; background-color: transparent; color: var(--text-secondary); cursor: pointer; transition: all var(--transition-base); font-size: var(--text-sm); text-align: left;"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-folder"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"18"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 20a2 2 0 0 0 2-2...
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getElementError node_modules/@testing-library/dom/dist/query-helpers.js:20:35
+ ❯ getMultipleElementsFoundError node_modules/@testing-library/dom/dist/query-helpers.js:23:10
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/App.test.tsx:68:23
+     66| 
+     67|         // Verify user message appears immediately (optimistic)
+     68|         expect(screen.getByText('Hi AI')).toBeInTheDocument();
+       |                       ^
+     69| 
+     70|         // Verify API called
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/App.test.tsx > Summerizer App Integration Tests > persists settings
+TestingLibraryElementError: Unable to find an element with the text: API Configuration. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m"display: flex; height: 100vh; overflow: hidden;"[39m
+    [36m>[39m
+      [36m<aside[39m
+        [33mstyle[39m=[32m"width: 260px; background-color: var(--bg-secondary); border-right: 1px solid var(--border-primary); display: flex; flex-direction: column; height: 100%; transition: width var(--transition-base); flex-shrink: 0;"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: var(--space-4); border-bottom: 1px solid var(--border-primary);"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mstyle[39m=[32m"width: 100%; padding: var(--space-3); background-color: var(--accent-primary); color: white; border: medium; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: var(--space-2); font-weight: 500; font-size: var(--text-sm); transition: background-color var(--transition-base);"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-plus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"18"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 5v14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mNew Chat[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"flex: 1 1 0%; overflow-y: auto; padding: var(--space-3);"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"margin-bottom: var(--space-4);"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"padding: var(--space-3); margin: var(--space-1) 0; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: var(--space-3); background-color: var(--bg-tertiary); color: var(--text-primary); transition: background-color var(--transition-base); position: relative;"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-message-square"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span[39m
+                [33mstyle[39m=[32m"white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: var(--text-sm); flex: 1 1 0%;"[39m
+              [36m>[39m
+                [0mNew Chat[0m
+              [36m</span>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"delete-btn"[39m
+                [33mstyle[39m=[32m"background: transparent; border: medium; cursor: pointer; padding: var(--space-1); color: var(--text-muted); opacity: 0.7; display: flex; align-items: center;"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-trash2 lucide-trash-2"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"14"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"14"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M10 11v6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14 11v6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M3 6h18"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: var(--space-4); border-top: 1px solid var(--border-primary); display: flex; flex-direction: column; gap: var(--space-2);"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mstyle[39m=[32m"display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2); border-radius: var(--radius-md); border: medium; background-color: transparent; color: var(--text-secondary); cursor: pointer; transition: all var(--transition-base); font-size: var(--text-sm); text-align: left;"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-folder"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"18"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 20a2 2 0 0 0 ...
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/App.test.tsx:105:23
+    103| 
+    104|         // Modal should be open
+    105|         expect(screen.getByText('API Configuration')).toBeInTheDocumen…
+       |                       ^
+    106| 
+    107|         // Change Prompt
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 2 passed (5)
+   Start at  13:42:22
+   Duration  3.35s (transform 352ms, setup 207ms, import 1.16s, tests 419ms, environment 1.31s)
+

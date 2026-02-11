@@ -1,0 +1,15 @@
+﻿
+ RUN  v4.0.18 D:/AntiGravity code area/Summerizer app
+
+ Γ¥» src/App.test.tsx (5 tests | 3 failed) 417ms
+     ├ù renders the initial UI correctly 114ms
+     Γ£ô can create a new chat session 35ms
+     ├ù can send a message and receive a response 105ms
+     Γ£ô can create a new folder (project) 92ms
+     ├ù persists settings 67ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 2 passed (5)
+   Start at  13:41:39
+   Duration  3.26s (transform 394ms, setup 174ms, import 1.10s, tests 417ms, environment 1.28s)
+
